@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { ServersComponent } from './servers/servers.component';
+import { ServerComponent } from './server/server.component';
 
 @NgModule({
 
   // we use declarations to let know which components are we using
   declarations: [
-    AppComponent , 
-    WarningAlertComponent , 
-    SuccessAlertComponent
+    AppComponent ,
+    ServersComponent, ServerComponent
   ],
   imports: [
     BrowserModule
