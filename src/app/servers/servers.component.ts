@@ -43,6 +43,12 @@ export class ServersComponent implements OnInit {
     if(!this.isServerButtonDisabled) return 'green' ; 
     else return 'red' ; 
   } 
+
+  getColorNgStyle()
+  {
+    if(this.isServerButtonDisabled) return false ; 
+    return true ;
+  }
   ngOnInit(): void {
   }
 

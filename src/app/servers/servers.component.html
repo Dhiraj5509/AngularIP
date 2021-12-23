@@ -31,10 +31,22 @@
 
     {{serverStatus}}
 </p>
+
 <!-- executes the else block -->
 <ng-template #elseBlock>
     {{serverStatus}}
 </ng-template>
 
+
+<!-- ng-style  -->
 <p [ngStyle]="{color:getColour()}">Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
+
+<!-- ng-class -->
+<!-- {
+    key : value , key is a css class and value is true/false , i.e. whether the class should be included or not!
+    key's can be separated by comma's
+    {key1:value1 , key2:value2 , key3:value3}
+} -->
+
+<p [ngClass]="{success:getColorNgStyle() , failure:!getColorNgStyle()}">Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
 
