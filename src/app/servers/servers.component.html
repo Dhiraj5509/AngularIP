@@ -1,5 +1,15 @@
 <!-- if we want to bind any property of a dom element with the component , then we can use property binding -->
-<button [disabled]="isServerButtonDisabled">Add Server</button>
+<!-- bind any event i.e add event listener to the button -->
+<!-- maive data binding in angular -->
 
+
+<label for="">Server Name</label>
+
+<!-- naive 2 way binding  -->
+<!-- event binding -->
+<input type="text" (input)="OnTextChanged($event)" [value]=serverName>
+<p>{{serverName}}</p>
+<button [disabled]="isServerButtonDisabled" (click)="OnServerCreateButtonClicked()">Add Server</button>
+<p>{{serverStatus}}</p>
 <p>Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
-{{serverName}}
+
