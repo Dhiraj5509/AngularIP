@@ -1,19 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ServersComponent } from './servers/servers.component';
 @NgModule({
 
   // we use declarations to let know which components are we using
   declarations: [
-    AppComponent,
-    ServersComponent
-   
+    AppComponent
   ],
   imports: [
-    BrowserModule , 
-    FormsModule
+    BrowserModule
   ],
   providers: [],
 
@@ -21,4 +16,6 @@ import { ServersComponent } from './servers/servers.component';
   // we can use as many number of component we want , but it is conventional to use only our main AppComponent 
   bootstrap: [AppComponent] 
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

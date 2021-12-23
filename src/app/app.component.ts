@@ -19,5 +19,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular project';
-  name = 'dhiraj'
+  name = 'dhiraj' ; 
+  toogle = false ; 
+  clicked : number[]= [] ; 
+  onClick()
+  { 
+    this.toogle=!this.toogle ;
+    this.clicked.push(this.clicked.length+1); 
+  }
+
+  giveMeColour(n : number)
+  {
+    if(n%2==0) return 'red' ; 
+    else return 'green' ; 
+  }
+
+  fifthColor(n: number)
+  {
+    if(n%5==0) return true ; 
+    else return false ; 
+  }
 }
