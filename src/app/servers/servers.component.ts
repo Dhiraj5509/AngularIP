@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
-  constructor() { }
+  serverName = "Tomcat!" ; 
+  isServerButtonDisabled = true ; 
+  constructor() { 
+    setTimeout(()=>{
+      this.isServerButtonDisabled = false ; 
+    } , 2000);
+  }
 
   ngOnInit(): void {
   }

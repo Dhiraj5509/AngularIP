@@ -1,8 +1,5 @@
-<app-server>
+<!-- if we want to bind any property of a dom element with the component , then we can use property binding -->
+<button [disabled]="isServerButtonDisabled">Add Server</button>
 
-</app-server>
-
-<hr>
-<app-server>
-
-</app-server>
+<p>Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
+{{serverName}}
