@@ -7,8 +7,16 @@
 
 <!-- naive 2 way binding  -->
 <!-- event binding -->
-<input type="text" (input)="OnTextChanged($event)" [value]=serverName>
+
+<!-- <input type="text" (input)="OnTextChanged($event)" [value]=serverName>
+<p>{{serverName}}</p> -->
+
+<!-- 2 way binding using ng model -->
+
+<input type="text" [(ngModel)]="serverName">
 <p>{{serverName}}</p>
+
+
 <button [disabled]="isServerButtonDisabled" (click)="OnServerCreateButtonClicked()">Add Server</button>
 <p>{{serverStatus}}</p>
 <p>Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
