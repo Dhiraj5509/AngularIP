@@ -9,6 +9,7 @@ export class ServersComponent implements OnInit {
   serverName = "Tomcat" ; 
   serverStatus = "not created server yet" ; 
   isServerButtonDisabled = true ; 
+  isStatusEnabled = false ; 
   
   constructor() { 
     
@@ -33,8 +34,15 @@ export class ServersComponent implements OnInit {
 
   OnServerCreateButtonClicked()
   {
+    this.isStatusEnabled = true ; 
     this.serverStatus = "created server and the name is " +  this.serverName ; 
   }
+
+  getColour()
+  {
+    if(!this.isServerButtonDisabled) return 'green' ; 
+    else return 'red' ; 
+  } 
   ngOnInit(): void {
   }
 

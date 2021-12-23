@@ -21,6 +21,20 @@
 
 <!-- event + property binding -->
 <button [disabled]="shouldServerDisable()" (click)="OnServerCreateButtonClicked()">Add Server</button>
-<p>{{serverStatus}}</p>
-<p>Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
+
+<!-- ngif statement -->
+
+<!-- ng-if-else -->
+<!-- <element *ngif=condition; else elseblockpointer -->
+<!-- ngIf is a structural directive , because it decides which part of the dom should be displayed and which not -->
+<p *ngIf='"isStatusEnabled" ; else elseBlock'>
+
+    {{serverStatus}}
+</p>
+<!-- executes the else block -->
+<ng-template #elseBlock>
+    {{serverStatus}}
+</ng-template>
+
+<p [ngStyle]="{color:getColour()}">Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
 
