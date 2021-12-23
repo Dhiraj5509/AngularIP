@@ -9,10 +9,20 @@ export class ServersComponent implements OnInit {
   serverName = "Tomcat" ; 
   serverStatus = "not created server yet" ; 
   isServerButtonDisabled = true ; 
+  
   constructor() { 
-    setTimeout(()=>{
-      this.isServerButtonDisabled = false ; 
-    } , 2000);
+    
+  }
+
+  shouldServerDisable()
+  {
+    if(this.serverName === '')
+    {
+      this.isServerButtonDisabled = true ; 
+      return true ; 
+    }
+    this.isServerButtonDisabled = false ; 
+    return false ; 
   }
 
   OnTextChanged(event : Event)
@@ -23,7 +33,7 @@ export class ServersComponent implements OnInit {
 
   OnServerCreateButtonClicked()
   {
-    this.serverStatus = "created server" ; 
+    this.serverStatus = "created server and the name is " +  this.serverName ; 
   }
   ngOnInit(): void {
   }

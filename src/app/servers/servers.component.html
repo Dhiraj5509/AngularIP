@@ -13,11 +13,14 @@
 
 <!-- 2 way binding using ng model -->
 
+
+<!-- more practice on data binding -->
+<!-- 2 way data binding - ng model -->
 <input type="text" [(ngModel)]="serverName">
 <p>{{serverName}}</p>
 
-
-<button [disabled]="isServerButtonDisabled" (click)="OnServerCreateButtonClicked()">Add Server</button>
+<!-- event + property binding -->
+<button [disabled]="shouldServerDisable()" (click)="OnServerCreateButtonClicked()">Add Server</button>
 <p>{{serverStatus}}</p>
 <p>Status of button : button enabled status :  {{!isServerButtonDisabled}}</p>
 
