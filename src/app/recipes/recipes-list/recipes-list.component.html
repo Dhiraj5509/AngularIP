@@ -1,3 +1,20 @@
+<hr>
+<div *ngFor="let recipe of recipes ">
+    <a href="#">
+        <h3>
+            {{recipe.name}}
+        </h3>
+    
+        <img [src]="recipe.imagePath" [alt]="recipe.name">
+    
+        <p>
+            {{recipe.description}}
+        </p>
+    </a>
+    <hr>
+</div>
+
+
 <app-recipes-item>
 
 </app-recipes-item>

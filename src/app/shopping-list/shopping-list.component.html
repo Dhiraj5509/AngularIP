@@ -2,4 +2,14 @@
 
 </app-shopping-edit>
 
-<p> Shopping list</p>
+<h1> Shopping list</h1>
+<h3>Ingridients</h3>
+<hr>
+
+<div *ngFor="let indgredient of ingredients">
+    <a href="">
+        {{indgredient.name}}({{indgredient.amount}})
+    </a>
+        
+    <hr>
+</div>
