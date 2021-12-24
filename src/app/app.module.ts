@@ -1,25 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
-import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { ReceipeDetailComponent } from './recipes/receipe-detail/receipe-detail.component';
+import { ServersComponent } from './servers/servers.component';
+import { ServerComponent } from './servers/server/server.component';
 @NgModule({
 
   // we use declarations to let know which components are we using
   declarations: [
     AppComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipesListComponent,
-    RecipesItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    ReceipeDetailComponent
+    ServersComponent,
+    ServerComponent,
   ],
   imports: [
     BrowserModule
