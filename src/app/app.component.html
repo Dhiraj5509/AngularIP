@@ -1,16 +1,11 @@
-<h1>appcomponent:First angular program</h1>
+<app-header>
 
-<hr>
-<div>
-    <button class="btn btn-btn-primary" (click)="onClick()">Display details</button>
-</div>
+</app-header>
 
-<div *ngIf="toogle">Dhiraj Dunani </div>
+<app-shopping-list>
 
-<div *ngFor="let c of clicked">
-    <p>item toogled/un-toogled</p>
-    <p>click count</p>
-    <p [ngStyle]="{color:giveMeColour(c)}">{{c}}</p>
+</app-shopping-list>
 
-    <p [ngClass]="{fifth:fifthColor(c)}">{{c}}</p>
-</div>
+<app-recipes>
+
+</app-recipes>
