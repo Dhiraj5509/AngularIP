@@ -4,7 +4,7 @@
 // 3) html file url(template url)
 
 import { Component } from '@angular/core';
-
+import { NumberServiceService } from './services/number-service.service';
 // we usually add a decorator "@Component" to give that class the power of the component
 // @Component({})
 @Component({
@@ -19,4 +19,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
+  numbers : number[] ; 
+
+  // we have injected the NumberService dependency in our component via the constructor!
+  constructor(private numberService : NumberServiceService ){
+    this.numbers = numberService.getNumbers() ; 
+  }
 }
