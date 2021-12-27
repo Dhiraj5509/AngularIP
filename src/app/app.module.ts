@@ -1,27 +1,41 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { NumberServiceService } from './services/number-service.service';
-import { LogService } from './services/log.service';
-@NgModule({
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router , RouterModule, Routes } from '@angular/router';
 
-  // we use declarations to let know which components are we using
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { ServersComponent } from './servers/servers.component';
+import { UserComponent } from './users/user/user.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServerComponent } from './servers/server/server.component';
+import { ServersService } from './servers/servers.service';
+
+// specifying our routes
+const appRoutes : Routes = [
+  // it will take key value pairs {path , component } 
+  {path:'users' , component:UsersComponent}  , // localhost:4200/users -> call users component
+  {path:'home' , component:HomeComponent} , 
+  {path:'' , component:HomeComponent} , 
+  {path:'servers' , component:ServersComponent} , 
+];
+@NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes) 
   ],
-  // all the injectable services need to be mentioned here!
-  providers: [
-    NumberServiceService , 
-    LogService
-  ],
-
-  // which component/s should angular be aware of at the time of start-up
-  // we can use as many number of component we want , but it is conventional to use only our main AppComponent 
-  bootstrap: [AppComponent] 
+  providers: [ServersService],
+  bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
-}
+export class AppModule { }
