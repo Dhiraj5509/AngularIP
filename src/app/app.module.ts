@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NumberServiceService } from './services/number-service.service';
+import { LogService } from './services/log.service';
 @NgModule({
 
   // we use declarations to let know which components are we using
@@ -11,8 +12,10 @@ import { NumberServiceService } from './services/number-service.service';
   imports: [
     BrowserModule
   ],
+  // all the injectable services need to be mentioned here!
   providers: [
-    NumberServiceService
+    NumberServiceService , 
+    LogService
   ],
 
   // which component/s should angular be aware of at the time of start-up
@@ -20,6 +23,5 @@ import { NumberServiceService } from './services/number-service.service';
   bootstrap: [AppComponent] 
 })
 export class AppModule { 
-  
   
 }

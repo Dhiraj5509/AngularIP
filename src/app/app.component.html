@@ -1,3 +1,7 @@
-<div *ngFor="let num of numbers">
-    <p>{{num}}</p>
+<button class="btn btn-primary" (click)="onClick()">Toogle</button>
+
+<div *ngIf="toDisplay">
+    <div *ngFor="let num of numbers">
+        <p>{{num}}</p>
+    </div>
 </div>

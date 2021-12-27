@@ -21,8 +21,18 @@ export class AppComponent {
   
   numbers : number[] ; 
 
+  toDisplay = false ; 
+
   // we have injected the NumberService dependency in our component via the constructor!
   constructor(private numberService : NumberServiceService ){
-    this.numbers = numberService.getNumbers() ; 
+  }
+
+  onClick()
+  {
+    if(!this.toDisplay)
+    {
+      this.numbers = this.numberService.getNumbers() ; 
+    }
+    this.toDisplay = !this.toDisplay ; 
   }
 }
