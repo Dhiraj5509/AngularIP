@@ -15,7 +15,12 @@ import { NumberServiceService } from './services/number-service.service';
   // the html file needed to be served when this component is served
   templateUrl: './app.component.html',
   // the styles to apply to the html file rendered
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'] , 
+
+  // writing providers specifies that this component will get the new instance of the class
+  // lazy -loading
+  // a new copy will be created here , and this copy can be used only by this component and the descendants one.
+  providers : [NumberServiceService]
 })
 export class AppComponent {
   
