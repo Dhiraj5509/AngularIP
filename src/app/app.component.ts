@@ -30,6 +30,10 @@ export class AppComponent {
 
   // we have injected the NumberService dependency in our component via the constructor!
   constructor(private numberService : NumberServiceService ){
+    this.numberService.numbersReturned.subscribe((message)=>{
+      console.log(message);
+    })
+
   }
 
   onClick()
