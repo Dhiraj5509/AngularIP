@@ -11,20 +11,14 @@ export class UserComponent implements OnInit {
 
   constructor(private activatedRoute : ActivatedRoute) { }
 
+  // params - path param
+  // queryParams
+  // fragement
   ngOnInit() {
-    // using ActivatedRoute , we can access the data passes using path param
     this.user = {
-      id : this.activatedRoute.snapshot.params['id'] , 
-      name : this.activatedRoute.snapshot.params['name'] 
+      name : this.activatedRoute.snapshot.params['name'] , 
+      id : this.activatedRoute.snapshot.params['id'] 
     }
-    // if we request the same component again , angular doesn't re-instantiate it 
-    // in our case the query parameters change , but the component isn't changed
-    // therefore in order to have an updated params , we can have a callback  , and if the params changes the callback will be called 
-    this.activatedRoute.params.subscribe( (params : Params)=>{
-      this.user.id = params['id']
-      this.user.name = params['name']
-    } );
-      
   }
 
 }

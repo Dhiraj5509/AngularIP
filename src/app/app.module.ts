@@ -21,7 +21,7 @@ const appRoutes : Routes = [
   {path:'users' , component:UsersComponent , pathMatch:"full"} , // localhost:4200/users -> call users component
   {path:'home' , component:HomeComponent , pathMatch:"full"} , 
   {path:'servers' , component:ServersComponent , pathMatch:"full"} , 
-  {path:'servers/:id/edit' , component:EditServerComponent , pathMatch:"full"} , 
+  {path:'servers/:id' , component:ServerComponent , pathMatch:"full"} ,
   // path param - passing data in the url 
   {path : 'users/:id/:name' , component:UserComponent , pathMatch : "full"} ,
   {path:'' , component:HomeComponent} , 
