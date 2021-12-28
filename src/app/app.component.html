@@ -4,15 +4,18 @@
       <ul class="nav nav-tabs">
         <!-- href will reload the page -->
         <!-- in order to perform the navigation we need to use routeLink directive -->
-        <li role="presentation" class="active"><a routerLink="/">Home</a></li>
-        <li role="presentation"><a routerLink="/servers">Servers</a></li>
-        <li role="presentation"><a routerLink="/users">Users</a></li>
+        <!-- by default routerLinkActive will check the url with the routerLink , it wouldn't match exactly , therefore to have it match exactly we use routerLinkActiveOptions   -->
+        <!-- we have mentioned absolute path here -->
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="obj"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/users">Users</a></li>
       </ul>
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- router outlet stats us where we need to insert the component dynamically -->
       <router-outlet>
 
       </router-outlet>
