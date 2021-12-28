@@ -17,6 +17,8 @@
   <!-- this path here is relatve to the current path , therefore it will lead us to page not foubd -->
   <!-- <button routerLink="servers">Reload page</button> -->
 
-  <button (click)="onReloadServer()">Reload Servers</button>
+  <button (click)="onReloadServer()" >Reload Servers</button>
+  <!-- pass query params from the url -->
+  <a [routerLink]="['/servers' , 5 , 'edit']" [queryParams]="{'edit-mode' : 2}" [fragment]="'loading'">Server Edit</a>
 </div>
 
