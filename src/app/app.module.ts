@@ -18,12 +18,17 @@ const appRoutes : Routes = [
   // it will take key value pairs {path , component } 
   // the path we have used here is absolute path 
   // pathMatch is used to say angular whether we want full match or prefix match
-  {path:'users' , component:UsersComponent , pathMatch:"full"} , // localhost:4200/users -> call users component
+
+  // localhost:4200/users -> call users component
+  {path:'users' , component:UsersComponent  , children:[
+    {path : ':id/:name' , component:UserComponent , pathMatch : "full"}
+  ]} , 
   {path:'home' , component:HomeComponent , pathMatch:"full"} , 
-  {path:'servers' , component:ServersComponent , pathMatch:"full"} , 
-  {path:'servers/:id' , component:ServerComponent , pathMatch:"full"} ,
+  {path:'servers' , component:ServersComponent  , children : [
+    {path:':id' , component:ServerComponent , pathMatch:"full"} ,
+    {path:':id/edit' , component:EditServerComponent , pathMatch:"full"} 
+  ]} , 
   // path param - passing data in the url 
-  {path : 'users/:id/:name' , component:UserComponent , pathMatch : "full"} ,
   {path:'' , component:HomeComponent} , 
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
