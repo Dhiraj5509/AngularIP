@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServersService } from './servers.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
@@ -9,10 +9,16 @@ import { Router } from '@angular/router';
 export class ServersComponent implements OnInit {
   public servers: {id: number, name: string, status: string}[] = [];
 
-  constructor(private serversService: ServersService , private router : Router) { }
+  constructor(private serversService: ServersService , private router : Router , private routes : ActivatedRoute) { }
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
   }
   
+  onReloadServer()
+  {
+    this.router.navigate(['servers'] , {
+      relativeTo : this.routes
+    })
+  }
 }
