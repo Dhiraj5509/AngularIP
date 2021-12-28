@@ -16,7 +16,16 @@ export class EditServerComponent implements OnInit {
   constructor(private serversService: ServersService , private route : ActivatedRoute) { }
 
   ngOnInit() {
+    let id = +this.route.snapshot.params['id'] ; 
     
+    
+    this.server = this.serversService.getServer(id) ; 
+    this.serverName = this.server.name
+    this.serverStatus = this.server.status ; 
+    
+    this.route.params.subscribe((params=>{
+      this.server = this.serversService.getServer(+params['id']) ; 
+    }))
   }
 
   onUpdateServer() {

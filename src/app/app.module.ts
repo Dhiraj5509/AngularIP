@@ -21,12 +21,12 @@ const appRoutes : Routes = [
 
   // localhost:4200/users -> call users component
   {path:'users' , component:UsersComponent  , children:[
-    {path : ':id/:name' , component:UserComponent , pathMatch : "full"}
+    {path : ':id/:name' , component:UserComponent }
   ]} , 
-  {path:'home' , component:HomeComponent , pathMatch:"full"} , 
+  {path:'home' , component:HomeComponent } , 
   {path:'servers' , component:ServersComponent  , children : [
-    {path:':id' , component:ServerComponent , pathMatch:"full"} ,
-    {path:':id/edit' , component:EditServerComponent , pathMatch:"full"} 
+    {path:':id' , component:ServerComponent} ,
+    {path:':id/edit' , component:EditServerComponent } 
   ]} , 
   // path param - passing data in the url 
   {path:'' , component:HomeComponent} , 

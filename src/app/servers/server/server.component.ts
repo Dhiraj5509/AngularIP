@@ -18,6 +18,13 @@ export class ServerComponent implements OnInit {
     console.log('here' , this.route.snapshot.params['id']);
     
     this.server = this.serversService.getServer(this.route.snapshot.params['id']);
-  }
 
+    this.route.params.subscribe((params)=>{
+      this.server = this.serversService.getServer(params['id']);
+    }); 
+  }
+  shouldDisable(){
+    if(this.route.snapshot.queryParams['allowedit'] !== '1') return true ; 
+    else return false ; 
+  }
 }
