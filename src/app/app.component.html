@@ -1,26 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <ul class="nav nav-tabs">
-        <!-- href will reload the page -->
-        <!-- in order to perform the navigation we need to use routeLink directive -->
-        <!-- by default routerLinkActive will check the url with the routerLink , it wouldn't match exactly , therefore to have it match exactly we use routerLinkActiveOptions   -->
-        <!-- we have mentioned absolute path here -->
-        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="obj"><a routerLink="/">Home</a></li>
-        <li role="presentation" routerLinkActive="active"><a routerLink="/servers">Servers</a></li>
-        <li role="presentation" routerLinkActive="active"><a routerLink="/users">Users</a></li>
-      </ul>
+      <a routerLink="/" [routerLinkActiveOptions]="{'exact':true}" routerLinkActive="is-active">Home</a> |
+      <a routerLinkActive="is-active" [routerLink]="['user', 1]">
+        User 1
+      </a>
+      |
+      <a routerLinkActive="is-active" [routerLink]="['user', 2]">
+        User 2
+      </a>
     </div>
   </div>
-
+  <hr />
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <!-- router outlet stats us where we need to insert the component -->
-      <router-outlet>
-
-      </router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </div>
-
-
- 
+</div>
