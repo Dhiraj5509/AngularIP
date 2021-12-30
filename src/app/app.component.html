@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let e of lis;">
+    <tr *ngFor="let e of lis | paginate: { itemsPerPage: totalPages, currentPage: currentPage }">
         <td>{{ e.name! }}</td>
         <td>{{ e.position }}</td>
         <td>{{ e.office }}</td>
@@ -24,3 +24,4 @@
     </tr>
     </tbody>
 </table>       
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

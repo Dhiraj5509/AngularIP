@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  currentPage :number = 1 ; 
+  totalPages = 2 ; 
   lis :{name:string , position:string , office:string , salary:number}[]= [] ; 
   li : any ; 
   constructor(private http : HttpClient){
