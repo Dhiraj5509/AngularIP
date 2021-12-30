@@ -1,32 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <!-- submit the form to the component -->
-      <form (ngSubmit)="onSubmit(formElements)" #formElements="ngForm">
-        <div id="user-data">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="form-control" [(ngModel)]="suggestName" required  #username = "ngModel">
-            <span class="help-block" *ngIf="username.touched && username.invalid">Please enter the valid value</span>
-          </div>
-          <button class="btn btn-default" type="button" (click)="suggestUserName()">Suggest an Username</button>
-          <div class="form-group">
-            <label for="email">Mail</label>
-            <input type="email" id="email" class="form-control" ngModel name="email" email required #email = "ngModel"> 
-            <span class="help-block" *ngIf="email.touched && username.invalid">Please enter the valid value</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="secret">Secret Questions</label>
-          <!-- <select id="secret" class="form-control" ngModel nam="secret" ngModel="pet" > -->
-          <!-- <select id="secret" class="form-controel" ngModel name="secret" [ngModel]="'pet'" > -->
-          <select id="secret" class="form-control" ngModel name="secret" [ngModel]="defaultValue" >
-            <option value="pet">Your first Pet?</option>
-            <option value="teacher">Your first teacher?</option>
-          </select>
-        </div>
-        <button class="btn btn-primary" type="submit" [disabled]="formElements.invalid">Submit</button>
-      </form>
-    </div>
-  </div>
-</div>
+
+<h1>Registered Employees</h1>
+
+
+<table class="table" id='tab'>
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Office</th>
+        <th scope="col">Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let e of lis;">
+        <td>{{ e.name! }}</td>
+        <td>{{ e.position }}</td>
+        <td>{{ e.office }}</td>
+        <td>{{ e.salary }}</td>
+    </tr>
+    </tbody>
+</table>       
