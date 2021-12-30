@@ -19,12 +19,10 @@ export class AppComponent implements OnInit{
 
     observable.subscribe((data)=>{
       if(data){
-
+        this.li=data;
+        this.lis=this.li.list;
       }
-      this.li=data;
-      this.lis=this.li.list;
     }) ; 
-   
   }
 
 }
