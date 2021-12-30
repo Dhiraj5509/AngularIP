@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { RouterModule, Routes} from '@angular/router';
 
+const routes : Routes =  [
+
+]
 @NgModule({
   declarations: [
     AppComponent
@@ -12,6 +16,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot(routes) 
   ],
   providers: [],
   bootstrap: [AppComponent]

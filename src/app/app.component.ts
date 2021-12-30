@@ -8,9 +8,19 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   defaultValue : string = "pet"; 
-
   genders = ['male' , 'female'] ; 
   suggestName = ""
+  user : {
+    userName : string , 
+    userEmail : string , 
+    gender : string , 
+    secretQuestion : string
+  } = {
+    userName : '' , 
+    userEmail :' ' , 
+    gender : '' , 
+    secretQuestion : ''
+  }
   suggestUserName() {
     this.suggestName = 'Superuser';
   }
@@ -18,12 +28,10 @@ export class AppComponent {
   onSubmit(formElements : NgForm)
   {
     console.log(formElements); 
-    
-  }
-
-  isRadioChecked(index : number) : boolean
-  {
-    if(index==0) return true ; 
-    return false ; 
+    this.user.userName = formElements.value.uData.username ; 
+    this.user.userEmail = formElements.value.uData.email ; 
+    this.user.secretQuestion = formElements.value.secret ; 
+    this.user.gender = formElements.value.gender ; 
+   
   }
 }
