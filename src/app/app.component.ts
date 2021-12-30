@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   defaultValue : string = "pet"; 
+
+  genders = ['male' , 'female'] ; 
   suggestName = ""
   suggestUserName() {
     this.suggestName = 'Superuser';
@@ -19,4 +21,9 @@ export class AppComponent {
     
   }
 
+  isRadioChecked(index : number) : boolean
+  {
+    if(index==0) return true ; 
+    return false ; 
+  }
 }
