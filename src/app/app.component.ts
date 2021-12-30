@@ -35,4 +35,9 @@ export class AppComponent {
     { 'id': 18, 'name': 'Yardley Georgeot', 'phoneno': '(213) 5730967', 'email': 'ygeorgeoth@360.cn', 'gender': 'Male', 'nationality': 'Portugal' },
     { 'id': 19, 'name': 'Hestia Palffrey', 'phoneno': '(349) 6453938', 'email': 'hpalffreyi@nba.com', 'gender': 'Female', 'nationality': 'Madagascar' },
     ];
+
+    changePage(currentPage : number)
+    {
+      this.p = currentPage ; 
+    }
 }
