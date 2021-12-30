@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ const routes : Routes =  [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes) 
+    RouterModule.forRoot(routes)  , 
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
